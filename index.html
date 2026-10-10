@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yibo Liang - 个人主页</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #2980b9;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-color); 
+            background-color: var(--bg-color);
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        header { 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 20px; 
+            margin-bottom: 30px; 
+            text-align: center; 
+        }
+        h1 { 
+            color: var(--primary-color); 
+            margin-bottom: 10px; 
+            font-size: 2.5em;
+        }
+        .contact-info { 
+            font-size: 1.1em; 
+            color: #666; 
+        }
+        h2 { 
+            color: var(--secondary-color); 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 8px; 
+            margin-top: 35px; 
+        }
+        .section-item { 
+            margin-bottom: 25px; 
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .item-title { 
+            font-weight: bold; 
+            font-size: 1.15em; 
+            color: var(--primary-color);
+        }
+        .item-date {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .item-subtitle { 
+            font-style: italic; 
+            color: #555; 
+            margin-bottom: 10px; 
+        }
+        .skills-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            list-style: none; 
+            padding: 0; 
+        }
+        .skills-list li { 
+            background: #ecf0f1; 
+            color: #2c3e50;
+            padding: 6px 12px; 
+            border-radius: 20px; 
+            font-size: 0.9em; 
+            font-weight: 500;
+        }
+        ul.details { 
+            margin-top: 5px; 
+            padding-left: 20px; 
+            color: #444;
+        }
+        ul.details li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Yibo Liang</h1>
+            <div class="contact-info">
+                香港中文大学 生命科学学院 | 博士研究生
+            </div>
+        </header>
+
+        <section>
+            <h2>关于我 (About Me)</h2>
+            <p>我目前在香港中文大学生命科学学院攻读博士学位，主要致力于植物生物学领域的研究。我的研究兴趣涵盖细胞膜转运（Membrane Trafficking）、过氧化物酶体（Peroxisomes）以及线粒体网络在植物系统中的动态机制。结合我在生物科学、仿生学和机械设计方面的跨学科背景，我热衷于利用分子生物学手段与现代成像技术探索细胞内的微观世界。</p>
+        </section>
+
+        <section>
+            <h2>教育背景 (Education)</h2>
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">香港中文大学 (The Chinese University of Hong Kong)</div>
+                    <div class="item-date">2026 – 至今</div>
+                </div>
+                <div class="item-subtitle">生命科学学院，博士研究生</div>
+            </div>
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">伊利诺伊大学厄巴纳-香槟分校 (University of Illinois Urbana-Champaign)</div>
+                    <div class="item-date">2025.01 – 2025.05</div>
+                </div>
+                <div class="item-subtitle">分子与细胞生物学学院，交换生</div>
+            </div>
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">上海科技大学 (ShanghaiTech University)</div>
+                    <div class="item-date">2022.09 – 2026.06</div>
+                </div>
+                <div class="item-subtitle">生命科学学院，理学学士</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>科研经历 (Research Experience)</h2>
+            
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">植物细胞器动态与分子机制研究</div>
+                </div>
+                <div class="item-subtitle">香港中文大学</div>
+                <ul class="details">
+                    <li>聚焦植物生物学中的膜转运机制、过氧化物酶体以及线粒体网络的研究。</li>
+                    <li>熟练运用双分子荧光互补（BiFC）技术及质粒载体构建，实现细胞内蛋白质相互作用的可视化分析。</li>
+                </ul>
+            </div>
+
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">叩头虫弹跳机制与仿生学研究 (Bioinspiration)</div>
+                </div>
+                <div class="item-subtitle">伊利诺伊大学厄巴纳-香槟分校 (Marianne Alleyne 教授实验室)</div>
+                <ul class="details">
+                    <li>利用 DeepLabCut 深度学习工具收集叩头虫弹跳过程中的运动位点数据，运用“三点标记策略”解决高速运动下的追踪难题。</li>
+                    <li>运用锁存介导的弹簧驱动（LaMSA）系统建立生物力学模型，并通过 3D 打印技术重现能量储存、锁存释放及快速放能的生物力学过程。</li>
+                </ul>
+            </div>
+
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">秀丽隐杆线虫过氧化物酶体运输的分子机制</div>
+                </div>
+                <div class="item-subtitle">上海科技大学 (朱焕乎教授实验室)</div>
+                <ul class="details">
+                    <li>研究支架蛋白在调节过氧化物酶体运输中的作用，并探索其组织特异性功能。</li>
+                    <li>通过 CRISPR-Cas9 基因编辑建立荧光报告突变株，探究 MAPK 等上游信号通路及磷酸化机制对马达蛋白功能的调节作用。</li>
+                </ul>
+            </div>
+            
+            <div class="section-item">
+                <div class="item-header">
+                    <div class="item-title">RoboMaster 机甲大师高校联盟赛</div>
+                </div>
+                <div class="item-subtitle">上海科技大学无人机战队队长</div>
+                <ul class="details">
+                    <li>负责无人机云台的机械结构设计，利用 SolidWorks 建模并通过 3D 打印和激光切割完成零件加工制造。</li>
+                    <li>曾带领团队荣获全国赛二等奖、三等奖等多项荣誉。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>技能专长 (Skills)</h2>
+            <ul class="skills-list">
+                <li>分子生物学: PCR, Western Blot, CRISPR-Cas9, RNA-Seq, DNA Cloning</li>
+                <li>软件与编程: Python, R, MATLAB, SolidWorks, Touch Designer</li>
+                <li>数据与图像处理: DeepLabCut, ImageJ, BioRender, SnapGene, Prism</li>
+                <li>工程与硬件: 3D 打印, 激光切割, 无人机组装与测试</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
