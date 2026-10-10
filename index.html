@@ -1,97 +1,179 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yibo Liang - 个人主页</title>
+    <title>Yibo Liang | Portfolio</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #2980b9;
-            --bg-color: #f9f9f9;
-            --text-color: #333;
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-1: #38bdf8;
+            --accent-2: #818cf8;
+            --glow: rgba(56, 189, 248, 0.4);
         }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text-color); 
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 30px 20px; 
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
+
         .container {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-out;
         }
-        header { 
-            border-bottom: 2px solid var(--primary-color); 
-            padding-bottom: 20px; 
-            margin-bottom: 30px; 
-            text-align: center; 
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        h1 { 
-            color: var(--primary-color); 
-            margin-bottom: 10px; 
-            font-size: 2.5em;
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
         }
-        .contact-info { 
-            font-size: 1.1em; 
-            color: #666; 
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
-        h2 { 
-            color: var(--secondary-color); 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 8px; 
-            margin-top: 35px; 
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
         }
-        .section-item { 
-            margin-bottom: 25px; 
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 50px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1f2937;
+            color: var(--text-main);
+            display: inline-block;
+            position: relative;
         }
-        .item-header {
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-1);
+            box-shadow: 0 0 10px var(--glow);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #1f2937;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--glow);
+        }
+
+        .card-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
         }
-        .item-title { 
-            font-weight: bold; 
-            font-size: 1.15em; 
-            color: var(--primary-color);
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-1);
         }
-        .item-date {
-            font-size: 0.9em;
-            color: #7f8c8d;
+
+        .card-date {
+            font-size: 0.9rem;
+            color: var(--accent-2);
+            font-weight: 600;
         }
-        .item-subtitle { 
-            font-style: italic; 
-            color: #555; 
-            margin-bottom: 10px; 
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-weight: 400;
         }
-        .skills-list { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 10px; 
-            list-style: none; 
-            padding: 0; 
+
+        ul.details {
+            list-style-type: none;
+            padding-left: 0;
         }
-        .skills-list li { 
-            background: #ecf0f1; 
-            color: #2c3e50;
-            padding: 6px 12px; 
-            border-radius: 20px; 
-            font-size: 0.9em; 
-            font-weight: 500;
-        }
-        ul.details { 
-            margin-top: 5px; 
-            padding-left: 20px; 
-            color: #444;
-        }
+
         ul.details li {
-            margin-bottom: 6px;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        ul.details li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-1);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-1);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--glow);
+            transform: scale(1.05);
+        }
+
+        p.about-text {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -99,97 +181,102 @@
     <div class="container">
         <header>
             <h1>Yibo Liang</h1>
-            <div class="contact-info">
-                香港中文大学 生命科学学院 | 博士研究生
-            </div>
+            <div class="subtitle">Ph.D. Student | The Chinese University of Hong Kong</div>
         </header>
 
         <section>
-            <h2>关于我 (About Me)</h2>
-            <p>我目前在香港中文大学生命科学学院攻读博士学位，主要致力于植物生物学领域的研究。我的研究兴趣涵盖细胞膜转运（Membrane Trafficking）、过氧化物酶体（Peroxisomes）以及线粒体网络在植物系统中的动态机制。结合我在生物科学、仿生学和机械设计方面的跨学科背景，我热衷于利用分子生物学手段与现代成像技术探索细胞内的微观世界。</p>
+            <h2>About Me</h2>
+            <p class="about-text">
+                I am a Ph.D. student at the School of Life Sciences, The Chinese University of Hong Kong, with a profound interest in plant biology. My research primarily focuses on membrane trafficking, peroxisomes, and the dynamic mechanisms of mitochondrial networks in plant systems. Leveraging my interdisciplinary background in biological sciences, bioinspiration, and mechanical design, I am passionate about exploring the microscopic world within cells using molecular biology and advanced imaging technologies.
+            </p>
         </section>
 
         <section>
-            <h2>教育背景 (Education)</h2>
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">香港中文大学 (The Chinese University of Hong Kong)</div>
-                    <div class="item-date">2026 – 至今</div>
+            <h2>Education</h2>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">The Chinese University of Hong Kong</div>
+                    <div class="card-date">2026 – Present</div>
                 </div>
-                <div class="item-subtitle">生命科学学院，博士研究生</div>
+                <div class="card-subtitle">Ph.D. Student in Life Sciences</div>
             </div>
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">伊利诺伊大学厄巴纳-香槟分校 (University of Illinois Urbana-Champaign)</div>
-                    <div class="item-date">2025.01 – 2025.05</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">University of Illinois Urbana-Champaign</div>
+                    <div class="card-date">Jan 2025 – May 2025</div>
                 </div>
-                <div class="item-subtitle">分子与细胞生物学学院，交换生</div>
+                <div class="card-subtitle">Exchange Student, School of Molecular & Cellular Biology</div>
             </div>
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">上海科技大学 (ShanghaiTech University)</div>
-                    <div class="item-date">2022.09 – 2026.06</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">ShanghaiTech University</div>
+                    <div class="card-date">Sep 2022 – Jun 2026</div>
                 </div>
-                <div class="item-subtitle">生命科学学院，理学学士</div>
+                <div class="card-subtitle">Bachelor of Science in Biological Sciences</div>
             </div>
         </section>
 
         <section>
-            <h2>科研经历 (Research Experience)</h2>
+            <h2>Research Experience</h2>
             
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">植物细胞器动态与分子机制研究</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Plant Organelle Dynamics & Molecular Mechanisms</div>
+                    <div class="card-date">CUHK</div>
                 </div>
-                <div class="item-subtitle">香港中文大学</div>
                 <ul class="details">
-                    <li>聚焦植物生物学中的膜转运机制、过氧化物酶体以及线粒体网络的研究。</li>
-                    <li>熟练运用双分子荧光互补（BiFC）技术及质粒载体构建，实现细胞内蛋白质相互作用的可视化分析。</li>
+                    <li>Focusing on membrane trafficking mechanisms, peroxisomes, and mitochondrial networks in plant biology.</li>
+                    <li>Utilizing Bimolecular Fluorescence Complementation (BiFC) and plasmid vector construction for visualizing intracellular protein interactions.</li>
                 </ul>
             </div>
 
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">叩头虫弹跳机制与仿生学研究 (Bioinspiration)</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Mechanism Study of the Clicking Process in Click Beetles (Bioinspiration)</div>
+                    <div class="card-date">UIUC (Prof. Marianne Alleyne's Lab)</div>
                 </div>
-                <div class="item-subtitle">伊利诺伊大学厄巴纳-香槟分校 (Marianne Alleyne 教授实验室)</div>
                 <ul class="details">
-                    <li>利用 DeepLabCut 深度学习工具收集叩头虫弹跳过程中的运动位点数据，运用“三点标记策略”解决高速运动下的追踪难题。</li>
-                    <li>运用锁存介导的弹簧驱动（LaMSA）系统建立生物力学模型，并通过 3D 打印技术重现能量储存、锁存释放及快速放能的生物力学过程。</li>
+                    <li>Collected positional data of body parts during the clicking process using DeepLabCut, employing a "three-point labeling strategy" to track high-speed movements.</li>
+                    <li>Modeled the biomechanical sequence using a Latch-Mediated Spring Actuation (LaMSA) system and recreated energy storage and rapid discharge through 3D-printed bioinspired models.</li>
                 </ul>
             </div>
 
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">秀丽隐杆线虫过氧化物酶体运输的分子机制</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Nutritional & Developmental Mechanisms in C. elegans</div>
+                    <div class="card-date">ShanghaiTech (Prof. Huanhu Zhu's Lab)</div>
                 </div>
-                <div class="item-subtitle">上海科技大学 (朱焕乎教授实验室)</div>
                 <ul class="details">
-                    <li>研究支架蛋白在调节过氧化物酶体运输中的作用，并探索其组织特异性功能。</li>
-                    <li>通过 CRISPR-Cas9 基因编辑建立荧光报告突变株，探究 MAPK 等上游信号通路及磷酸化机制对马达蛋白功能的调节作用。</li>
+                    <li>Investigated the scaffold protein mechanisms involved in peroxisome transport and their tissue-specific functions.</li>
+                    <li>Explored upstream MAPK signaling pathways and phosphorylation mechanisms regulating motor proteins via CRISPR-Cas9 gene editing.</li>
                 </ul>
             </div>
             
-            <div class="section-item">
-                <div class="item-header">
-                    <div class="item-title">RoboMaster 机甲大师高校联盟赛</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">RoboMaster University Series Competition</div>
+                    <div class="card-date">ShanghaiTech Drone Team Lead</div>
                 </div>
-                <div class="item-subtitle">上海科技大学无人机战队队长</div>
                 <ul class="details">
-                    <li>负责无人机云台的机械结构设计，利用 SolidWorks 建模并通过 3D 打印和激光切割完成零件加工制造。</li>
-                    <li>曾带领团队荣获全国赛二等奖、三等奖等多项荣誉。</li>
+                    <li>Designed the gimbal mechanical structure for drones using SolidWorks, and manufactured parts via 3D printing and laser cutting.</li>
+                    <li>Led the team to win multiple national awards, including 2nd and 3rd Prizes in the RoboMaster Aerial Robotics National Competition.</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>技能专长 (Skills)</h2>
-            <ul class="skills-list">
-                <li>分子生物学: PCR, Western Blot, CRISPR-Cas9, RNA-Seq, DNA Cloning</li>
-                <li>软件与编程: Python, R, MATLAB, SolidWorks, Touch Designer</li>
-                <li>数据与图像处理: DeepLabCut, ImageJ, BioRender, SnapGene, Prism</li>
-                <li>工程与硬件: 3D 打印, 激光切割, 无人机组装与测试</li>
-            </ul>
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Molecular Biology (PCR, Western Blot)</div>
+                <div class="skill-tag">CRISPR-Cas9</div>
+                <div class="skill-tag">RNA-Seq</div>
+                <div class="skill-tag">Python & R</div>
+                <div class="skill-tag">MATLAB</div>
+                <div class="skill-tag">SolidWorks & 3D Printing</div>
+                <div class="skill-tag">DeepLabCut</div>
+                <div class="skill-tag">ImageJ & BioRender</div>
+                <div class="skill-tag">Drone Assembly</div>
+            </div>
         </section>
     </div>
 </body>
